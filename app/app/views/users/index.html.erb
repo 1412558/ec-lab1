@@ -1,0 +1,24 @@
+<h1>Users#index</h1>
+<%= link_to('new user', controller: 'users', action: 'new') %>
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>name</th>
+			<th>email</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+			 <td><%= user.id %></td>
+			 <td><%= user.name %></td>
+			 <td><%= user.email %></td>
+			 <td>
+			 	<%= link_to('show', user_path(user.id)) %>
+			 </td>
+			</tr>
+			<% end %>	
+	</tbody>
+</table>
